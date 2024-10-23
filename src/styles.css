@@ -1,3 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+/* FONTS */
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('./assets/fonts/poppins/Poppins-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url('./assets/fonts/poppins/Poppins-Medium.ttf');
+  }
+  
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url('./assets/fonts/poppins/Poppins-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: Poppins-SemiBold;
+    src: url('./assets/fonts/poppins/Poppins-SemiBold.ttf');
+  }
+
+/* RESTYLE TAG */
+
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+}

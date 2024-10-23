@@ -1,0 +1,56 @@
+<div class="home__container">
+    @for (articule of articuleList; track articule.id) {
+        <p-card header="{{articule.title.slice(0,30)| uppercase}} " subheader="Escrito por usuario: {{articule.userId}}" class="home__card" >
+            <ng-template pTemplate="header">
+            </ng-template>
+            <p class="home__body">
+                {{articule.body.slice(0,100) }}...
+            </p>
+            <div class="home__button">
+                <p-button class="" (onClick)="showDialog(articule)" label="Editar" icon="pi pi-pencil" [raised]="true" />
+            </div>
+        </p-card>
+      }
+</div>
+<p-dialog class="dialog"
+    header="Header" 
+    [(visible)]="visible" 
+    [modal]="true" 
+    [style]="{ width: '25rem' }">
+        <ng-template pTemplate="header">
+            <div class="dialog__avatar">
+                <p-avatar
+                    shape="circle" />
+                <span class="font-bold white-space-nowrap">
+                    Escrito por usuario ID: {{articuleEdit?.userId}}
+                </span>
+            </div>
+        </ng-template>
+        <form class="login__form" [formGroup]="articuleEditForm" autocomplete="off" (ngSubmit)="onSubmit()">
+        <span class="p-text-secondary block mb-5">Actualizar datos</span>
+        <div class="login__form__input">
+            <label for="title" class="font-semibold w-6rem">
+                Titulo
+            </label>
+            <input (disabled)="isEeadOnly" pInputText id="f" formControlName="title" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="login__form__input">
+            <label for="body" class="font-semibold w-6rem">Texto</label>
+            <textarea rows="8" cols="30" pInputTextarea autoResize="false" formControlName="body"></textarea>
+        </div>
+        <div class="login__form__buttons">
+            <p-button 
+            label="Cancel" 
+            [text]="true" 
+            severity="secondary" 
+            (onClick)="visible = false" />
+            <p-button 
+            label="Guardar" 
+            [outlined]="true" 
+            severity="secondary" 
+            type="submit"
+            [disabled]="articuleEditForm.invalid"
+            />
+        </div>
+    </form>
+</p-dialog>

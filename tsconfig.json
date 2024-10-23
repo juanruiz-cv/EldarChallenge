@@ -33,8 +33,11 @@
         "@auth/*": [
           "./src/app/modules/auth/*"
         ],
-        "@boards/*": [
-          "./src/app/modules/boards/*"
+        "@layouts/*": [
+          "./src/app/modules/layouts/*"
+        ],
+        "@main/*": [
+          "src/app/modules/main/*"
         ],
         "@environments/*": [
           "./src/environments/*"
@@ -47,6 +50,9 @@
         ],
         "@services/*": [
           "./src/app/services/*"
+        ],
+        "@pipes/*": [
+          "./src/app/pipes/*"
         ],
         "@utils/*": [
           "./src/app/utils/*"
